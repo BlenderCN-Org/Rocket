@@ -380,6 +380,26 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5ce65d046a70cf04a931d4a096de4fda, type: 3}
+--- !u!1 &1781771693 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: -927199367670048503, guid: 6f0270afaf370274384de6b1195b0199,
+    type: 3}
+  m_PrefabInstance: {fileID: 1888229946}
+  m_PrefabAsset: {fileID: 0}
+--- !u!64 &1781771694
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1781771693}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 0}
 --- !u!1001 &1888229946
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -395,7 +415,7 @@ PrefabInstance:
     - target: {fileID: -4216859302048453862, guid: 6f0270afaf370274384de6b1195b0199,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 12
+      value: 14.95
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 6f0270afaf370274384de6b1195b0199,
         type: 3}
@@ -522,3 +542,23 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: 3d3a8eb5f482e1a418a093478b9ab0d5, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 584a8ef4749c89745b7ae07f3ba7617f, type: 3}
+--- !u!1 &1940525524 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: -927199367670048503, guid: 5ce65d046a70cf04a931d4a096de4fda,
+    type: 3}
+  m_PrefabInstance: {fileID: 1633198152}
+  m_PrefabAsset: {fileID: 0}
+--- !u!64 &1940525525
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1940525524}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 2534964839176971238, guid: 5ce65d046a70cf04a931d4a096de4fda, type: 3}

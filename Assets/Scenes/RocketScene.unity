@@ -1447,8 +1447,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   velocity: {x: 0, y: 0, z: 0}
-  acceleration: 0.4
-  maxVelocity: 0.2
+  acceleration: 0.6
+  maxVelocity: 0.22
 --- !u!4 &1878036477 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -4216859302048453862, guid: f0e5a5ae3854edd479d3f0b2aa7f8e91,
@@ -1709,7 +1709,7 @@ Transform:
   m_Children:
   - {fileID: 1325032693}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &601973663543887803
 Transform:
@@ -1724,7 +1724,7 @@ Transform:
   m_Children:
   - {fileID: 1393952982812290625}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1393952982812290625
 Transform:

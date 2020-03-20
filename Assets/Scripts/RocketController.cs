@@ -15,22 +15,14 @@ public class RocketController : MonoBehaviour
     [SerializeField]
     float maxVelocity;
 
-
-   
-
-    // Start is called before the first frame update
     void Start()
     {
       
     }
 
-    // Update is called once per frame
     void Update()
     {
 
-    
-
- 
         if (Input.GetKey(KeyCode.UpArrow))
         {
             transform.Rotate(new Vector3(-130 * Time.deltaTime, 0, 0));
@@ -47,9 +39,7 @@ public class RocketController : MonoBehaviour
         {
             transform.Rotate(new Vector3(0, 0, -130 * Time.deltaTime));
             Debug.Log("Left");
-
         }
-
 
         if (Input.GetKey(KeyCode.RightArrow))
         {
@@ -57,20 +47,12 @@ public class RocketController : MonoBehaviour
             Debug.Log("Right");
         }
 
-
         if (Input.GetKey(KeyCode.Space))
         {
             velocity = Vector3.ClampMagnitude(velocity, maxVelocity);
-            velocity += transform.up * acceleration * Time.deltaTime;
-            
-
-
+            velocity += transform.up * acceleration * Time.deltaTime;        
             transform.position += velocity;
             Debug.Log("Sapce");
         }
-
-
-
     }
-
 }

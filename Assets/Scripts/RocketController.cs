@@ -47,10 +47,18 @@ public class RocketController : MonoBehaviour
             Debug.Log("Right");
         }
 
-        if (Input.GetKey(KeyCode.Space))
+        if (Input.GetKey(KeyCode.Z))
         {
             velocity = Vector3.ClampMagnitude(velocity, maxVelocity);
             velocity += transform.up * acceleration * Time.deltaTime;        
+            transform.position += velocity;
+            Debug.Log("Sapce");
+        }
+
+        if (Input.GetKey(KeyCode.S))
+        {
+            velocity = Vector3.ClampMagnitude(velocity, maxVelocity);
+            velocity +=transform.up * acceleration * Time.deltaTime;
             transform.position += velocity;
             Debug.Log("Sapce");
         }

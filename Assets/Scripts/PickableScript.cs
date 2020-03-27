@@ -8,7 +8,7 @@ public class PickableScript : MonoBehaviour
 {
 
     public GameObject ScoreText;
-    public Text text;
+    public ScoreUpdater scoreUpdater;
 
     // Start is called before the first frame update
     void Start()
@@ -16,7 +16,7 @@ public class PickableScript : MonoBehaviour
         if (ScoreText == null)
             ScoreText = GameObject.FindGameObjectWithTag("Score");
 
-        text = ScoreText.GetComponent<Text>();
+        scoreUpdater = ScoreText.GetComponent<ScoreUpdater>();
     }
 
     // Update is called once per frame
@@ -30,12 +30,10 @@ public class PickableScript : MonoBehaviour
         if(other.gameObject.tag == "Player")
         {
             Destroy(gameObject);
+            scoreUpdater.AddScore();
         }
 
-        string prevScore = text.text.ToString();
-        int score = Convert.ToInt32(prevScore);
-        score++;
-        text.text = Convert.ToString( score);
+
 
     }
 }

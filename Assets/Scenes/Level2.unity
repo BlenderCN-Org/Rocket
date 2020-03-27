@@ -1768,7 +1768,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 01be2ddd770f07646b1d0f90244497ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mLevelToLoad: RocketScene
+  mLevelToLoad: Level2
 --- !u!114 &1215348581
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2089,6 +2089,7 @@ GameObject:
   - component: {fileID: 1806126237}
   - component: {fileID: 1806126239}
   - component: {fileID: 1806126238}
+  - component: {fileID: 1806126240}
   m_Layer: 5
   m_Name: Text
   m_TagString: Score
@@ -2146,7 +2147,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: -4
+  m_Text: "0\t"
 --- !u!222 &1806126239
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2155,6 +2156,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1806126236}
   m_CullTransparentMesh: 0
+--- !u!114 &1806126240
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1806126236}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 153617fcb9c5d4a42858abe2a2cd3099, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  score: 0
 --- !u!1001 &1927363527
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -6,7 +6,7 @@ public class SpikeBall : MonoBehaviour
 {
 
     public float rotateSpeed = 300f;
-    private float moveSpeed = 0.05f;
+    private float moveSpeed = 0.1f;
 
     private int MaxSteps;
 

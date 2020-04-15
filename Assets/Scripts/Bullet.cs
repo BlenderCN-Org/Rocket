@@ -5,10 +5,16 @@ using UnityEngine;
 public class Bullet : MonoBehaviour
 {
     public ParticleSystem explosion;
+
+    private GameObject ScoreText;
+    private ScoreUpdater scoreUpdater;
     // Start is called before the first frame update
     void Start()
     {
-        
+        if (ScoreText == null)
+            ScoreText = GameObject.FindGameObjectWithTag("Score");
+
+        scoreUpdater = ScoreText.GetComponent<ScoreUpdater>();
     }
 
     // Update is called once per frame
@@ -19,11 +25,15 @@ public class Bullet : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+        if (other.gameObject.tag == "Enemy")
+        {
+            scoreUpdater.AddScore();
+        }
+
         Destroy(gameObject);
 
         if (explosion != null)
             Instantiate(explosion, transform.position, transform.rotation);
-
-        
+     
     }
 }

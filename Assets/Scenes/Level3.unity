@@ -204,6 +204,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 6885226121069065, guid: f8865faaec1eb094e8904c881c676bf0, type: 3}
+      propertyPath: Bullet
+      value: 
+      objectReference: {fileID: 2350027840499377818, guid: e7a0ddccda1d052499fc55a40cc13bae,
+        type: 3}
     - target: {fileID: 6012159847843792582, guid: f8865faaec1eb094e8904c881c676bf0,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -222,22 +227,22 @@ PrefabInstance:
     - target: {fileID: 6012159847843792582, guid: f8865faaec1eb094e8904c881c676bf0,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0.5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6012159847843792582, guid: f8865faaec1eb094e8904c881c676bf0,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6012159847843792582, guid: f8865faaec1eb094e8904c881c676bf0,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6012159847843792582, guid: f8865faaec1eb094e8904c881c676bf0,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6012159847843792582, guid: f8865faaec1eb094e8904c881c676bf0,
         type: 3}
@@ -247,12 +252,12 @@ PrefabInstance:
     - target: {fileID: 6012159847843792582, guid: f8865faaec1eb094e8904c881c676bf0,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
-      value: -90
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6012159847843792582, guid: f8865faaec1eb094e8904c881c676bf0,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 90
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6012159847843792582, guid: f8865faaec1eb094e8904c881c676bf0,
         type: 3}

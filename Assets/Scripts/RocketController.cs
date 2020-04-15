@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System;
@@ -15,10 +15,17 @@ public class RocketController : MonoBehaviour
     [SerializeField]
     float maxVelocity;
 
+    [SerializeField]
+    GameObject Bullet;
+
     void Start()
     {
       
     }
+
+    float timer = 10f;
+    bool start = false;
+    public float shootRate = 3f;
 
     void Update()
     {
@@ -47,20 +54,35 @@ public class RocketController : MonoBehaviour
             Debug.Log("Right");
         }
 
-        if (Input.GetKey(KeyCode.Z))
-        {
-            velocity = Vector3.ClampMagnitude(velocity, maxVelocity);
-            velocity += transform.up * acceleration * Time.deltaTime;        
-            transform.position += velocity;
-            Debug.Log("Sapce");
-        }
-
         if (Input.GetKey(KeyCode.S))
         {
             velocity = Vector3.ClampMagnitude(velocity, maxVelocity);
             velocity +=transform.up * acceleration * Time.deltaTime;
             transform.position += velocity;
             Debug.Log("Sapce");
+        }
+
+        // Timer
+        if (start)
+        {
+            if (timer < shootRate)
+            {
+                timer += Time.deltaTime;
+            }
+            else
+            {
+                timer = shootRate;
+                start = false;
+            }
+        }
+
+        // Shoot
+        if (Input.GetKey(KeyCode.Space) && timer >= shootRate)
+        {
+            GameObject bulletPrefab = Instantiate(Bullet, transform.position, transform.rotation);
+            bulletPrefab.GetComponent<Rigidbody>().AddForce(transform.up * 100, ForceMode.VelocityChange);
+            start = true;
+            timer = 0f;
         }
     }
 }

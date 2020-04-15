@@ -19,7 +19,7 @@ public class Movement2 : MonoBehaviour
         float hori = CrossPlatformInputManager.GetAxis("Horizontal");
         float xOffset = hori * Time.deltaTime * xSpeed;
         float xNewPos = xOffset + transform.localPosition.x;
-        transform.localPosition = new Vector3(xNewPos, transform.localPosition.y, transform.localPosition.z);
+        transform.localPosition = new Vector3(Mathf.Clamp( xNewPos,-10,10), transform.localPosition.y, transform.localPosition.z);
         print(xOffset);
         
     }

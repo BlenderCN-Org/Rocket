@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
+    public ParticleSystem explosion;
     // Start is called before the first frame update
     void Start()
     {
@@ -19,5 +20,10 @@ public class Bullet : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         Destroy(gameObject);
+
+        if (explosion != null)
+            Instantiate(explosion, transform.position, transform.rotation);
+
+        
     }
 }

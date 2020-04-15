@@ -15,9 +15,12 @@ public class RocketController : MonoBehaviour
     [SerializeField]
     GameObject Bullet;
 
+    [SerializeField]
+    float bulletSpeed = 500;
+
     void Start()
     {
-      
+
     }
 
     // movement fields
@@ -26,7 +29,7 @@ public class RocketController : MonoBehaviour
     // shooting fields
     float timeSinceLastShot = 10f;
     bool isReloaded = false;
-    public float shootSpeed = 3f;
+    public float shootSpeed = 1f;
 
     void Update()
     {
@@ -58,7 +61,7 @@ public class RocketController : MonoBehaviour
         if (Input.GetKey(KeyCode.S))
         {
             velocity = Vector3.ClampMagnitude(velocity, maxVelocity);
-            velocity +=transform.up * acceleration * Time.deltaTime;
+            velocity += transform.up * acceleration * Time.deltaTime;
             transform.position += velocity;
             Debug.Log("Sapce");
         }
@@ -81,7 +84,7 @@ public class RocketController : MonoBehaviour
         if (Input.GetKey(KeyCode.Space) && timeSinceLastShot >= shootSpeed)
         {
             GameObject bulletPrefab = Instantiate(Bullet, transform.position, transform.rotation);
-            bulletPrefab.GetComponent<Rigidbody>().AddForce(transform.up * 100, ForceMode.VelocityChange);
+            bulletPrefab.GetComponent<Rigidbody>().AddForce(transform.up * bulletSpeed, ForceMode.VelocityChange);
             isReloaded = true;
             timeSinceLastShot = 0f;
         }

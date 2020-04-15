@@ -7,9 +7,6 @@ public class RocketController : MonoBehaviour
 {
 
     [SerializeField]
-    Vector3 velocity = Vector3.zero;
-
-    [SerializeField]
     float acceleration = 10f;
 
     [SerializeField]
@@ -23,9 +20,13 @@ public class RocketController : MonoBehaviour
       
     }
 
-    float timer = 10f;
-    bool start = false;
-    public float shootRate = 3f;
+    // movement fields
+    private Vector3 velocity = Vector3.zero;
+
+    // shooting fields
+    float timeSinceLastShot = 10f;
+    bool isReloaded = false;
+    public float shootSpeed = 3f;
 
     void Update()
     {
@@ -63,26 +64,26 @@ public class RocketController : MonoBehaviour
         }
 
         // Timer
-        if (start)
+        if (isReloaded)
         {
-            if (timer < shootRate)
+            if (timeSinceLastShot < shootSpeed)
             {
-                timer += Time.deltaTime;
+                timeSinceLastShot += Time.deltaTime;
             }
             else
             {
-                timer = shootRate;
-                start = false;
+                timeSinceLastShot = shootSpeed;
+                isReloaded = false;
             }
         }
 
         // Shoot
-        if (Input.GetKey(KeyCode.Space) && timer >= shootRate)
+        if (Input.GetKey(KeyCode.Space) && timeSinceLastShot >= shootSpeed)
         {
             GameObject bulletPrefab = Instantiate(Bullet, transform.position, transform.rotation);
             bulletPrefab.GetComponent<Rigidbody>().AddForce(transform.up * 100, ForceMode.VelocityChange);
-            start = true;
-            timer = 0f;
+            isReloaded = true;
+            timeSinceLastShot = 0f;
         }
     }
 }

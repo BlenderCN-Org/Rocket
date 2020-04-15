@@ -28,6 +28,7 @@ public class Bullet : MonoBehaviour
         if (other.gameObject.tag == "Enemy")
         {
             scoreUpdater.AddScore();
+            Destroy(other.gameObject);
         }
 
         Destroy(gameObject);

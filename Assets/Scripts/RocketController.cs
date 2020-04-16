@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System;
@@ -7,18 +7,29 @@ public class RocketController : MonoBehaviour
 {
 
     [SerializeField]
-    Vector3 velocity = Vector3.zero;
-
-    [SerializeField]
     float acceleration = 10f;
 
     [SerializeField]
     float maxVelocity;
 
+    [SerializeField]
+    GameObject Bullet;
+
+    [SerializeField]
+    float bulletSpeed = 500;
+
     void Start()
     {
-      
+
     }
+
+    // movement fields
+    private Vector3 velocity = Vector3.zero;
+
+    // shooting fields
+    float timeSinceLastShot = 10f;
+    bool isReloaded = false;
+    public float shootSpeed = 1f;
 
     void Update()
     {
@@ -47,20 +58,35 @@ public class RocketController : MonoBehaviour
             Debug.Log("Right");
         }
 
-        if (Input.GetKey(KeyCode.Z))
+        if (Input.GetKey(KeyCode.S))
         {
             velocity = Vector3.ClampMagnitude(velocity, maxVelocity);
-            velocity += transform.up * acceleration * Time.deltaTime;        
+            velocity += transform.up * acceleration * Time.deltaTime;
             transform.position += velocity;
             Debug.Log("Sapce");
         }
 
-        if (Input.GetKey(KeyCode.S))
+        // Timer
+        if (isReloaded)
         {
-            velocity = Vector3.ClampMagnitude(velocity, maxVelocity);
-            velocity +=transform.up * acceleration * Time.deltaTime;
-            transform.position += velocity;
-            Debug.Log("Sapce");
+            if (timeSinceLastShot < shootSpeed)
+            {
+                timeSinceLastShot += Time.deltaTime;
+            }
+            else
+            {
+                timeSinceLastShot = shootSpeed;
+                isReloaded = false;
+            }
+        }
+
+        // Shoot
+        if (Input.GetKey(KeyCode.Space) && timeSinceLastShot >= shootSpeed)
+        {
+            GameObject bulletPrefab = Instantiate(Bullet, transform.position, transform.rotation);
+            bulletPrefab.GetComponent<Rigidbody>().AddForce(transform.up * bulletSpeed, ForceMode.VelocityChange);
+            isReloaded = true;
+            timeSinceLastShot = 0f;
         }
     }
 }

@@ -313,8 +313,8 @@ MonoBehaviour:
   numberOfLives: 1
   isAlive: 1
   explosionPrefab: {fileID: 0}
-  onLivesGone: 1
-  LevelToLoad: 
+  onLivesGone: 0
+  LevelToLoad: Level
 --- !u!1 &288489238
 GameObject:
   m_ObjectHideFlags: 0
